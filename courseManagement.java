@@ -67,6 +67,23 @@ public class courseManagement {
 		
 	}
 	void deleteCourse() {
+		System.out.println("Enter the Course No:");
+		scan.nextLine();
+		String courseNo=scan.nextLine();
+		int i=0,flag=0;
+		for(HashMap<String, String>indiCourse:course) {
+			if(indiCourse.get("Course No").equals(courseNo)) {
+				flag=1;
+				break;
+			}
+			i++;
+		}
+		if(flag==1) {
+			course.remove(i);
+		}
+		else {
+			System.out.println("Invalid Course no");
+		}
 		
 	}
 	void displayCourse() {
